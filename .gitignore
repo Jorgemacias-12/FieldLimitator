@@ -31,3 +31,6 @@ manifest.mf
 
 #ignore IDE setting
 nbproject/
+
+#ignore Test Packages
+test/
