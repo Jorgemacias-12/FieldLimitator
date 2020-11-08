@@ -1,6 +1,6 @@
 # FieldLimitator
 
-Libreria de java que nos permite limitar la entrada del usuario, además de la posibilidad de que solo ingresen texto, números con y sin caracteres especiales.
+Libreria de java que nos permite limitar la entrada del usuario, además de que el usuario solo ingrese texto, números con y sin caracteres especiales.
 
 Para esto podemos usar los primeros dos métodos incluidos en la clase **fieldInputVerifier**
 
@@ -27,9 +27,36 @@ Excepción lanzada en consola:
 
 ![Error lanzado por consola](resources/Excepction.png)
 
-## ¿Cómo uso la librería?
+## Ejemplo de utilización
 
-Empecemos por como puedo utilizar los métodos que se encuentran en la clase.
+He aquí un pequeño fragmento de código donde sera explicado como usar los métodos.
 
-```sdsdsd
+## Uso del Método **setInputVerifier()**:
+
+```java
+    //Instanciar la clase **fieldInputVerifier**
+    fieldInputVerifier instance = new fieldInputVerifier();
+    private void fieldKeyTyped(java.awt.event.KeyEvent evt) {
+        instance.setInputFilter(fieldInputVerifier.NO_CHARACTERS, evt);
+    }
 ```
+
+- **fieldInputVerifier.NO_CHARACTERS** es la constante (de la misma clase) que utilizamos como argumento de función.
+
+- **evt** es el objeto tipo KeyEvent del componente a brindar la función.
+
+## Uso del Método **setInputCharacterLimit()**
+
+```java
+    //Instanciar la clase **fieldInputVerifier**
+    fieldInputVerifier instance = new fieldInputVerifier();
+    private void fieldKeyTyped(java.awt.event.KeyEvent evt) {
+        instance.setInputCharacterLimit(field, 20, evt);
+    }
+````
+
+- **field** es el componente del cual obtendremos la entrada del usuario, para posteriormente obtener su longitud.
+
+- **20** corresponde a la cantidad de caracteres que el usuario puede ingresar en el campo de texto.
+
+- **evt** es el objeto tipo KeyEvent del componente al que aplicaremos la función.
