@@ -32,7 +32,7 @@ public class fieldInputVerifier
     
     private boolean argumentError = false;
     
-    public void setInputFilter(JTextField field, int filterOption, KeyEvent evt)
+    public void setInputFilter (int filterOption, KeyEvent evt)
     {
         switch(filterOption)
         {
@@ -95,9 +95,12 @@ public class fieldInputVerifier
         }
     }
     
-    public void setInputCharacterLimit()
+    public void setInputCharacterLimit(JTextField field,int characterLimit, KeyEvent evt)
     {
-        
+        if()
+        {
+            
+        }
     }
     
 }
