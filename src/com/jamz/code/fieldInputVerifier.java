@@ -20,8 +20,8 @@ public class fieldInputVerifier
     
     public final static int NO_CHARACTERS = 0;
     public final static int NO_NUMBERS = 1;
-    public final static int LETTERS_WITH_SPECIAL_CHARACTERS = 2;
-    public final static int NUMBERS_WITH_SPECIAL_CHARACTERS = 3;
+    public final static int LETTERS_WO_SPECIAL_CHARACTERS = 2;
+    public final static int NUMBERS_WO_SPECIAL_CHARACTERS = 3;
    
     private final char[] specialCharacters = 
     {'°', '|', '!', '"', '#', '$', '%', 
