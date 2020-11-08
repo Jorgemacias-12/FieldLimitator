@@ -97,9 +97,18 @@ public class fieldInputVerifier
     
     public void setInputCharacterLimit(JTextField field,int characterLimit, KeyEvent evt)
     {
-        if()
+        if(characterLimit <= 0 && !argumentError)
         {
-            
+            argumentError = true;
+            throw new Error("The argument of the character limit must be higher than 0");
+        }
+        else
+        {
+            if(field.getText().length() >= characterLimit)
+            {
+                evt.consume();
+                Toolkit.getDefaultToolkit().beep();
+            }
         }
     }
     
