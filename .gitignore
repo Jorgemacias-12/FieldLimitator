@@ -34,3 +34,4 @@ nbproject/
 
 #ignore Test Packages
 test/
+/build/
