@@ -2,7 +2,6 @@ package com.jamz.code;
 
 import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -17,22 +16,31 @@ import javax.swing.JTextField;
 
 public class fieldInputVerifier 
 {
-    
     public final static int NO_CHARACTERS = 0;
     public final static int NO_NUMBERS = 1;
     public final static int LETTERS_WO_SPECIAL_CHARACTERS = 2;
     public final static int NUMBERS_WO_SPECIAL_CHARACTERS = 3;
    
-    private final char[] specialCharacters = 
+    private final static char[] specialCharacters = 
     {'°', '|', '!', '"', '#', '$', '%', 
     '&', '/', '(', ')', '=', '\'', '?', '¿', '¡', '¨', '*', '´', '+', '{',
     '}', '[', ']', '^', '`', '~', '\\', ',', ';', '.', ':', '-', '_','@'
     ,'<','>','¬','~'
     };
     
-    private boolean argumentError = false;
+    private static boolean argumentError = false;
     
-    public void setInputFilter (int filterOption, KeyEvent evt)
+    
+    public static void setInputFilterAndLimit(JTextField field,
+                                              int filterOption,
+                                              int characterLimit,
+                                              KeyEvent evt)
+    {
+        setFilterInput(filterOption, evt);
+        setLimitInput(field, characterLimit, evt);
+    }
+    
+    public static void setFilterInput(int filterOption, KeyEvent evt)
     {
         switch(filterOption)
         {
@@ -95,7 +103,7 @@ public class fieldInputVerifier
         }
     }
     
-    public void setInputCharacterLimit(JTextField field,int characterLimit, KeyEvent evt)
+    public static void setLimitInput(JTextField field, int characterLimit, KeyEvent evt)
     {
         if(characterLimit <= 0 && !argumentError)
         {
