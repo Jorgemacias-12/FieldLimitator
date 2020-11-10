@@ -1,62 +1,32 @@
 # FieldLimitator
 
-Libreria de java que nos permite limitar la entrada del usuario, además de que el usuario solo ingrese texto, números con y sin caracteres especiales.
+Libreria de java que nos permite limitar en un campo de texto la entrada del usuario, además de que el usuario solo ingrese texto, números con y sin caracteres especiales.
 
-Para esto podemos usar los primeros dos métodos incluidos en la clase **fieldInputVerifier**
+La librería contiene la clase **fieldInputVerifier** la cual nos permite lo siguiente:
 
-El primer método llamado *setInputFilter*, recibe como parametros un entero además de un objeto de tipo evento **KeyEvent**.
+- Limitar la cantidad de caracteres que pueden ser introducidos por el
+usuario en un campo de texto.
+- Limitar los caracteres que pueden ser introducidos por el usuario en un campo de texto.
 
-Los parametros para esta función se encuentran en la misma clase y son los siguientes:
+Esta clase contiene los siguientes 3 métodos:
 
-Argumento | valor del argumento (int)|Descripción del argumento|
-----------|--------------------------|--------------------------
-NO_CHARACTERS|0|Este argumento logra que la función solo permita la entrada de números. (incluidos caracteres especiales)|
-NO_NUMBERS|1|Este argumento logra que la función solo permita la entrada de letras. (incluidos caracteres especiales)|
-LETTERS_WO_SPECIAL_CHARACTERS|2|Este argumento cumple la misma función que **NO_CHARACTERS** pero sin la posibilidad de que el usuario ingrese caracteres especiales.|
-NUMBERS_WO_SPECIAL_CHARACTERS|3|Este argumento cumple la misma función que **NO_NUMBERS** pero sin la posibilidad de que el usuario ingrese caracteres especiales.|
+## <div align="center">Tabla de métodos</div>
 
-Estos argumentos se encuentran declarados como finales y son accesibles de forma estática por el programador.
+|Nombre del método | argumentos | función|
+|------------------|------------|--------|
+|<div align="center">setInputFilterAndLimit</div>| JTextField field, int inputFilter, int characterLimit, KeyEvent evt| Permite que el programador limite el typeo de caracteres a partir de una longitud estática, además de aplicar un filtro que solo permita el typeo de algunos tipos de caracteres, números y caracteres especiales.
+|<div align="center">setInputLimit</div>| JTextField field, int characterLimit, KeyEvent evt| Permite al programador limitar el typeo de caracteres al usuario en un especifico componente.|
+|<div align="center">setInputFilter</div>|int inputFilter, KeyEvent evt| Permite que el programador aplique un filtro a un componente en especifico, el cual no permitira la entrada de algunos caracteres dependiendo del filtro aplicado.
 
-El segundo método llamado *setInputCharacterLimit*, recibe como parametros Componente tipo **JTextField**, un entero que indica que cantidad de caracteres pueden ser introducidas
-en el componente utilizado en la función, y por último un objeto de tipo evento **KeyEvent**
+## <div align="center">Tabla de constantes de la clase</div>
 
-**Nota:** si la variable que contiene la cantidad de caracteres que se pueden introducir en el campo de texto es menor o igual a **0** la función retornara una excepción
-diciendo que el argumento del limite de caracteres debe ser mayor que 0.
+ *La clase contiene las siguientes constantes:*
 
-Excepción lanzada en consola:
+|Nombre de la constante|Valor de la constante (int) | descripción |
+|----------------------|----------------------------|-------------|
+| <p align="center">NO_CHARACTERS</p>| 0 | Esta constante es un fitro que al aplicarlo en la función *setInputFilter* solo es permitido el typeo de números y caracteres especiales al componente aplicado.
+|<p align="center">NO_NUMBERS</p>|1| Esta constante es un filtro que al aplicarlo en la función *setInputFilter* solo es permitido el typeo de letras y caracteres especiales al componente aplicado.
+|<p align="center">CHARACTERS_WO_SPECIAL_CHARACTERS</p>|2| Esta constante es un filtro que al aplicarlo en la función *setInputFilter* solo es permitido el typeo de Letras sin la posibilidad de typear caracteres especiales.
+|<p align="center">NUMBERS_WO_SPECIAL_CHARACTERS</p>|3| Esta constante es un filtro que al aplicarlo en la función *setInputFilter* solo es permitido el typeo de números sin la posibilidad de typear caracteres especiales.
 
-![Error lanzado por consola](resources/Excepction.png)
-
-## Ejemplo de utilización
-
-He aquí un pequeño fragmento de código donde sera explicado como usar los métodos.
-
-## Uso del Método **setInputVerifier()**:
-
-```java
-    //Instanciar la clase **fieldInputVerifier**
-    fieldInputVerifier instance = new fieldInputVerifier();
-    private void fieldKeyTyped(java.awt.event.KeyEvent evt) {
-        instance.setInputFilter(fieldInputVerifier.NO_CHARACTERS, evt);
-    }
-```
-
-- **fieldInputVerifier.NO_CHARACTERS** es la constante (de la misma clase) que utilizamos como argumento de función.
-
-- **evt** es el objeto tipo KeyEvent del componente a brindar la función.
-
-## Uso del Método **setInputCharacterLimit()**
-
-```java
-    //Instanciar la clase **fieldInputVerifier**
-    fieldInputVerifier instance = new fieldInputVerifier();
-    private void fieldKeyTyped(java.awt.event.KeyEvent evt) {
-        instance.setInputCharacterLimit(field, 20, evt);
-    }
-````
-
-- **field** es el componente del cual obtendremos la entrada del usuario, para posteriormente obtener su longitud.
-
-- **20** corresponde a la cantidad de caracteres que el usuario puede ingresar en el campo de texto.
-
-- **evt** es el objeto tipo KeyEvent del componente al que aplicaremos la función.
+ ## <div align="center">¿Cómo uso los métodos?</div>
