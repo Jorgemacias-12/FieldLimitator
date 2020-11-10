@@ -34,4 +34,7 @@ nbproject/
 
 #ignore Test Packages
 test/
+
+#ignore compiled and built stuff
 /build/
+/dist/
