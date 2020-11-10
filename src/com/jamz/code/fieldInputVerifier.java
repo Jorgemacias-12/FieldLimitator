@@ -16,9 +16,29 @@ import javax.swing.JTextField;
 
 public class fieldInputVerifier 
 {
+    /** 
+     *  Constant used in function setInputFilter, allow consume characters
+     *  typed by the user on a text field component.
+     *  @since v0.0.1
+     */
     public final static int NO_CHARACTERS = 0;
+    /**
+     *  Constant used in function setInputFilter, allow consume numbers typed 
+     *  by the user on a text field component.
+     *  @since v0.0.1
+     */
     public final static int NO_NUMBERS = 1;
+    /**
+     *  Constant used in function setInputFilter, allow consume numbers and
+     *  special characters typed by the user on a text field component.
+     *  @since v0.0.1
+     */
     public final static int CHARACTERS_WO_SPECIAL_CHARACTERS = 2;
+    /**
+     *  Constant used in function setInputFilter, allow consume special
+     *  characters and letters only allowing to the user type numbers.
+     *  @since v0.0.1
+     */
     public final static int NUMBERS_WO_SPECIAL_CHARACTERS = 3;
    
     private final static char[] specialCharacters = 
@@ -30,6 +50,13 @@ public class fieldInputVerifier
     
     private static boolean argumentError = false;
    
+    
+    /** This function allow to the programmer limit the typing of certain characters or number in a text field using a filter constant.
+     * @since v0.0.1
+     * @param field JTextField to limit user typing entry.
+     * @param characterLimit Quantity of characters to limit on the text field.
+     * @param evt KeyTyped event of the text field component.
+     */
     public static void setInputLimit(JTextField field,
                                       int characterLimit,
                                       KeyEvent evt) 
@@ -53,6 +80,11 @@ public class fieldInputVerifier
         }
     }
     
+    /** Allow to use a filter to deny user typing certain characters or numbers depending of the number or constant introduced in the argument inputFilter.
+     * @since v0.0.1
+     * @param inputFilter Determines what characters are going to consume on the text field when the user type on the text field.
+     * @param evt KeyTyped event of the text field component.
+     */
     public static void setInputFilter(int inputFilter, KeyEvent evt)
     {
         switch(inputFilter)
@@ -117,6 +149,14 @@ public class fieldInputVerifier
                 }
         }
     }
+    
+    /** This function contains the functions of setInputLimit and setInputFilter, use it when you need to use these two functions instead of use that two functions separately.
+     * @since v0.0.1
+     * @param field TextField component to limit user typing entry.
+     * @param inputFilter Determines what characters are going to consume on the text field when the user type on the text field.
+     * @param characterLimit Quantity of characters to limit on the text field.
+     * @param evt KeyTyped event of the text field component.
+     */
     
     public static void setInputFilterAndLimit( JTextField field,
                                                int inputFilter,
