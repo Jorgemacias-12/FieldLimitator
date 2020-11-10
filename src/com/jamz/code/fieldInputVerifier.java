@@ -118,4 +118,13 @@ public class fieldInputVerifier
         }
     }
     
+    public static void setInputFilterAndLimit( JTextField field,
+                                               int inputFilter,
+                                               int characterLimit,
+                                               KeyEvent evt)
+    {
+        setInputFilter(inputFilter, evt);
+        setInputLimit(field, characterLimit, evt);
+    }
+    
 }
