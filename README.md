@@ -35,11 +35,11 @@ Esta clase contiene los siguientes 3 métodos:
 
  Si no sabes importar librerias en un proyecto de java puedes encontrar en los siguientes enlaces como hacerlo.
 
-- Eclipse: [haz clic aquí](https://stackoverflow.com/questions/4962559/import-libraries-in-eclipse)
+- Eclipse: <a href="https://stackoverflow.com/questions/4962559/import-libraries-in-eclipse" target="_blank">haz clic aquí</a>
 
-- Netbeans: [haz clic aquí](https://stackoverflow.com/questions/21002426/how-to-import-libraries-in-netbeans)
+- Netbeans: <a href="https://stackoverflow.com/questions/21002426/how-to-import-libraries-in-netbeans" target="_blank">haz clic aquí</a>
 
-- IntelliJ IDEA [haz clic aquí](https://stackoverflow.com/questions/1051640/correct-way-to-add-external-jars-lib-jar-to-an-intellij-idea-project)
+- IntelliJ IDEA <a href="https://stackoverflow.com/questions/1051640/correct-way-to-add-external-jars-lib-jar-to-an-intellij-idea-project" target="_blank">haz clic aquí</a>
 
 Una vez hayas incluido la librería, puedes aplicar los métodos mencionados arriba para cualquier componente de tipo JTextField.
 
@@ -50,10 +50,11 @@ Una vez hayas incluido la librería, puedes aplicar los métodos mencionados arr
 ```Java
     //KeyTyped method
     private void component_name KeyTyped(java.awt.KeyEvent evt){
-        //Access to the static functions of the libraries for example:
+        //Access to static library function/s
         fieldInputVerifier.setInputFilterAndLimit(component_name, fieldInputVerifier.NUMBERS_WO_SPECIAL_CHARACTERS, 20, evt);
     }
 ```
+
 Si deseas probar el funcionamiento de la librería antes de descargarla aquí tienes una aplicación de GUI para comprobar la funcionalidad.
 
 [Clic aquí]() <!-- Añadir enlace de descarga cuando termine de pulir la aplicación.-->
