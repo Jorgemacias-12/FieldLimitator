@@ -2,6 +2,11 @@
 
 Libreria de java que nos permite limitar en un campo de texto la entrada del usuario, además de que el usuario solo ingrese texto, números con y sin caracteres especiales.
 
+## Descargar la librería
+ Si deseas probar el funcionamiento de esta, además de descargarla [haz clic aquí](https://github.com/Jorgemacias-12/FieldLimitator/releases/tag/v0.0.1)
+
+ **Dentro del .zip donde se encuentra la librería también encontrarás un pequeño programa donde puedes probrar su funcionamiento.**
+
 La librería contiene la clase **fieldInputVerifier** la cual nos permite lo siguiente:
 
 - Limitar la cantidad de caracteres que pueden ser introducidos por el
@@ -54,6 +59,3 @@ Una vez hayas incluido la librería, puedes aplicar los métodos mencionados arr
         fieldInputVerifier.setInputFilterAndLimit(component_name, fieldInputVerifier.NUMBERS_WO_SPECIAL_CHARACTERS, 20, evt);
     }
 ```
-Si deseas probar el funcionamiento de la librería antes de descargarla aquí tienes una aplicación de GUI para comprobar la funcionalidad.
-
-[Clic aquí]() <!-- Añadir enlace de descarga cuando termine de pulir la aplicación.-->
